@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Domek</title>
+    <style>
+    span{
+        display: block;
+        border: 1px solid black;
+        background-color: red;
+        font-family: arial;
+        position: absolute;
+        top: 5vh;
+        left: 5vw;
+        padding: 10px;
+    }
+
+    div{
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        top: 70vh;
+        left: 30%;
+    }
+
+    span:hover~div.dach{
+        border-left: 150px solid transparent;
+        border-right: 150px solid transparent;
+        border-bottom: 150px solid black;
+        top: calc(50% - 150px);
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    span:hover~div.body{
+        width: 300px;
+        height: 150px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    span:hover~div.komin{
+        width: 50px;
+        height: 80px;
+        top: calc(50% - 150px);
+        left: calc(50% + 75px);
+        transform: translate(-50%,-50%);
+    }
+
+    span:hover~div.okno{
+        width: 50px;
+        height: 50px;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    span:hover~div#pierwsze{
+        left: calc(50% - 80px);   
+    }
+    span:hover~div#drugie{
+        left: calc(50% + 80px);   
+    }
+
+    span:hover~div.dzwi{
+        width: 70px;
+        height: 100px;
+        top: calc(50% + 25px);
+        left:50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .dach{
+        border-left: 0px solid transparent;
+        border-right: 0px solid transparent;
+        border-bottom: 0px solid black;
+        transition: 0.5s linear 0.1s;
+    }
+
+    .body{
+        transition: 0.5s linear;
+        background-color: red;
+    }
+
+    .komin{
+        transition: 0.5s linear 0.15s;
+        background-color: gray;
+        z-index: -1;
+    }
+
+    .okno{
+        transition: 0.5s 0.13s;
+        background-color: yellow;
+    }
+
+    .okno#drugie{
+        transition: 0.5s 0.18s;
+    }
+
+    .dzwi{
+        background-color: black;
+        transition: 0.5s 0.08s
+    }
+
+    </style>
+
+</head>
+
+<body>
+    <span>BUDUJEMY</span>
+    <div class="dach"></div>
+    <div class="body"></div>
+    <div class="komin"></div>
+    <div class="okno" id="pierwsze"></div>
+    <div class="okno" id="drugie"></div>
+    <div class="dzwi"></div>
+</body>
+
+</html>

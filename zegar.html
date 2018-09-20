@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+
+        .zegar {
+            width: 40vh;
+            height: 40vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background-color: red;
+        }
+
+        .wskazowka {
+            width: 6px;
+            height: 18vh;
+            position: absolute;
+            top: calc(50% - 9vh);
+            left: calc(50% - 3px);
+            transform: rotate(0deg) translate(-50%, -50%);
+            background-color: #000;
+            transition: 30s steps(60);
+
+        }
+
+        .zegar:hover~div.wskazowka {
+            transform: rotate(360deg) translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="zegar"></div>
+    <div class="wskazowka"></div>
+</body>
+
+</html>

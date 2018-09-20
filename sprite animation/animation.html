@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* Zombie: 10 5s 0.35s 200px 312px url(animation.png) 0deg */
+        /* Boy 8 5s 0.35s 75px 132px url(animation2.png) 180deg */
+
+        :root {
+            --frames: 5;
+            --bgMoveTime: 0s;
+            --spriteTime: 2s;
+            --frameWidth: 86px;
+            --frameHeight: 117px;
+            --animationName: url(animation3.jpg);
+            --rotate: 0deg;
+            /* If character is looking left --rotate: 0deg;*/
+            /* If character is looking right --rotate: 180deg;*/
+        }
+
+        section {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            background-image: var(--animationName);
+            height: var(--frameHeight);
+            width: var(--frameWidth);
+            animation: move var(--spriteTime) infinite steps(var(--frames)), bgmove var(--bgMoveTime) infinite linear alternate, rotate calc(var(--bgMoveTime) * 2) infinite linear;
+        }
+
+        @keyframes move {
+            100% {
+                background-position: calc(-1 * var(--frameWidth) * var(--frames)) 0;
+            }
+        }
+
+        @keyframes bgmove {
+            100% {
+                left: calc(100% - var(--frameWidth));
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotateY(calc(180deg - var(--rotate)))
+            }
+
+            49.99% {
+                transform: rotateY(calc(180deg - var(--rotate)))
+            }
+
+            50% {
+                transform: rotateY(calc(0deg + var(--rotate)))
+            }
+
+            100% {
+                transform: rotateY(calc(0deg + var(--rotate)))
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+
+    </section>
+</body>
+
+</html>
